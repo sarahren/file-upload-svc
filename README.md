@@ -4,16 +4,17 @@ This is the backend service for file upload service. It uses H2 database as in m
 NOTE: the service is using port 10086, please make sure the port is available.
 
 ## Project setup
-'mvn install'
+mvn install
 
-### Modify the script file permission
-'chmod +x ./scripts/file-upload-svc.sh'
+### Modify the script file permission if needed
+chmod +x ./scripts/file-upload-svc.sh
 
 ## Start the service
-'./file-upload-svc.sh start'
+cd scripts
+./file-upload-svc.sh start
 
 ##  Stop the service
-'./file-upload-svc.sh start'
+./file-upload-svc.sh stop
 
 ## Restart the service
-'./file-upload-svc.sh restart'
+./file-upload-svc.sh restart
