@@ -1,12 +1,12 @@
 #!/bin/bash
 
+DIR=$(pwd)
 JAVA_OPT=-Xmx1024m
-JARFILE=`ls -1r ../target/*.jar 2>/dev/null | head -n 1`
-PID_FILE=../pid.file
-LOG_DIR=../logs
-LOG_FILE=../logs/file-upload-svc-log.log
+JARFILE=`ls -1r target/*.jar 2>/dev/null | head -n 1`
+PID_FILE=$DIR/pid.file
+LOG_DIR=$DIR/logs
+LOG_FILE=$DIR/logs/file-upload-svc-log.log
 RUNNING=N
-PWD=`pwd`
 
 ######### DO NOT MODIFY ########
 
@@ -28,7 +28,7 @@ start()
                 then
                         echo "ERROR: jar file not found"
                 else
-                        nohup java  $JAVA_OPT -jar $PWD/$JARFILE > $LOG_FILE 2>&1 &
+                        nohup java  $JAVA_OPT -jar $JARFILE > $LOG_FILE 2>&1 &
   						echo $! > $PID_FILE
                         echo "Application $JARFILE starting..."
                         tail -f $LOG_FILE

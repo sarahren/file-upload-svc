@@ -6,15 +6,11 @@ NOTE: the service is using port 10086, please make sure the port is available.
 ## Project setup
 mvn install
 
-### Modify the script file permission if needed
-chmod +x ./scripts/file-upload-svc.sh
-
 ## Start the service
-cd scripts
-./file-upload-svc.sh start
+./scripts/file-upload-svc.sh start
 
 ##  Stop the service
-./file-upload-svc.sh stop
+./scripts/file-upload-svc.sh stop
 
 ## Restart the service
-./file-upload-svc.sh restart
+./scripts/file-upload-svc.sh restart
