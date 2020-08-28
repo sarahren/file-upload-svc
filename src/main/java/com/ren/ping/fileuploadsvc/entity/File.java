@@ -17,6 +17,9 @@ public class File {
     @Column(name="processed_date" ,insertable = false, updatable = false)
     private LocalDateTime processedDate;
 
+    @Column(name="uploaded_by")
+    private String uploadedBy;
+
     public File() {}
 
     public long getId() {
@@ -45,6 +48,14 @@ public class File {
 
     public LocalDateTime getProcessedDate() {
         return processedDate;
+    }
+
+    public String getUploadedBy() {
+        return uploadedBy;
+    }
+
+    public void setUploadedBy(String uploadedBy) {
+        this.uploadedBy = uploadedBy;
     }
 
     @Override
